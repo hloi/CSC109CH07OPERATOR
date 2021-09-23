@@ -19,8 +19,8 @@ void TimeHrMn::Print() const {
 TimeHrMn TimeHrMn::operator+(TimeHrMn rhs) {
     TimeHrMn timeTotal;
 
-    timeTotal.hours   = this->hours   + rhs.hours;
-    timeTotal.minutes = this->minutes + rhs.minutes;
+    timeTotal.hours  = ((this->hours + rhs.hours) + ((this->minutes + rhs.minutes) / 60)) % 24;
+    timeTotal.minutes = (this->minutes + rhs.minutes) % 60;
 
     return timeTotal;
 }
@@ -33,3 +33,23 @@ int TimeHrMn::getMinutes() const {
     return minutes;
 }
 
+bool TimeHrMn::operator<(TimeHrMn rhs) {
+    if (this->hours == rhs.hours) {
+        return this->minutes < rhs.minutes;
+    }
+
+    return (this->hours < rhs.hours);
+
+}
+
+bool TimeHrMn::operator>=(TimeHrMn rhs) {
+    return !(*this < rhs);
+}
+
+// int* i = address 1000
+// address 1000 = 10
+// i = address 1000
+// *i = 10
+// this = 100000
+// address 100000 = current object TimeHrMn
+// *this = current object TimeHrMn

@@ -13,12 +13,18 @@ public:
     TimeHrMn operator+(TimeHrMn rhs) ;
     int getHours() const;
     int getMinutes() const;
+    bool operator<(TimeHrMn rhs);
+    bool operator>=(TimeHrMn rhs);
+
 private:
     int hours;
    int minutes;
 
 
 };
+
+// >, !, ==, <=
+// +, -, /, *
 
 
 #endif //CSC109CH07OPERATOR_TIMEHRMN_H

@@ -38,6 +38,84 @@ public:
 
         t3.Print();
     }
+
+
+    void testPlusOperator2() {
+        //Use TS_ASSERT_EQUALS(Result, ExpResult) to test your functions.
+        TimeHrMn t1(15,50);  // test constructors
+        TS_ASSERT_EQUALS(15, t1.getHours());
+        TS_ASSERT_EQUALS(50, t1.getMinutes());
+        TimeHrMn t2(12,30);
+        TS_ASSERT_EQUALS(12, t2.getHours());
+        TS_ASSERT_EQUALS(30, t2.getMinutes());
+        TimeHrMn t3 = t1 + t2;
+        TS_ASSERT_EQUALS(4, t3.getHours());
+        TS_ASSERT_EQUALS(20, t3.getMinutes());
+
+
+        t3.Print();
+    }
+
+    //  a       b
+    //  |-------|
+    void testLessOperator2() {
+        //Use TS_ASSERT_EQUALS(Result, ExpResult) to test your functions.
+        TimeHrMn t1(15,50);  // test constructors
+        TS_ASSERT_EQUALS(15, t1.getHours());
+        TS_ASSERT_EQUALS(50, t1.getMinutes());
+        TimeHrMn t2(12,30);
+        TS_ASSERT_EQUALS(12, t2.getHours());
+        TS_ASSERT_EQUALS(30, t2.getMinutes());
+
+        TS_ASSERT(t2 < t1);
+    }
+
+    void testLessOperator3() {
+        //Use TS_ASSERT_EQUALS(Result, ExpResult) to test your functions.
+        TimeHrMn t1(15,50);  // test constructors
+        TS_ASSERT_EQUALS(15, t1.getHours());
+        TS_ASSERT_EQUALS(50, t1.getMinutes());
+        TimeHrMn t2(15,50);
+        TS_ASSERT_EQUALS(15, t2.getHours());
+        TS_ASSERT_EQUALS(50, t2.getMinutes());
+
+        TS_ASSERT(!(t1 < t2));
+    }
+
+    void testGEOperator2() {
+        //Use TS_ASSERT_EQUALS(Result, ExpResult) to test your functions.
+        TimeHrMn t1(15,50);  // test constructors
+        TS_ASSERT_EQUALS(15, t1.getHours());
+        TS_ASSERT_EQUALS(50, t1.getMinutes());
+        TimeHrMn t2(12,30);
+        TS_ASSERT_EQUALS(12, t2.getHours());
+        TS_ASSERT_EQUALS(30, t2.getMinutes());
+
+        TS_ASSERT(t1 >= t2);
+    }
+
+    void testGEOperator3() {
+        //Use TS_ASSERT_EQUALS(Result, ExpResult) to test your functions.
+        TimeHrMn t1(15,50);  // test constructors
+        TS_ASSERT_EQUALS(15, t1.getHours());
+        TS_ASSERT_EQUALS(50, t1.getMinutes());
+        TimeHrMn t2(15,50);
+        TS_ASSERT_EQUALS(15, t2.getHours());
+        TS_ASSERT_EQUALS(50, t2.getMinutes());
+
+        TS_ASSERT(t1 >= t2);
+    }
+    void testGEOperator4() {
+        //Use TS_ASSERT_EQUALS(Result, ExpResult) to test your functions.
+        TimeHrMn t1(15,50);  // test constructors
+        TS_ASSERT_EQUALS(15, t1.getHours());
+        TS_ASSERT_EQUALS(50, t1.getMinutes());
+        TimeHrMn t2(12,30);
+        TS_ASSERT_EQUALS(12, t2.getHours());
+        TS_ASSERT_EQUALS(30, t2.getMinutes());
+
+        TS_ASSERT(!(t2 >= t1));
+    }
 };
 
 #endif //CSC109CH07OPERATOR_NEWCXXTEST_H
